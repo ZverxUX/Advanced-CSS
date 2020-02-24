@@ -1,4 +1,5 @@
 @import "variables";
+
 *, html {
         margin: 0;
         padding: 0;        
@@ -43,7 +44,7 @@ a {
 
     }
     &[title~="link"] {
-
+        color: $black;
     }
     &[class|="top"] {
     
@@ -154,46 +155,17 @@ header {
 
 main {
     width: $alignwide;
-    min-height: calc( 100vh - 244px );
+    height: 100vh;
     background: $white;
     color: $primary-color-dark;
     display: block;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    
-    
+    h1 {
+        color: $white;
+    }
     section {
         padding: 3rem;
-        &[class*="content"] {
-            background-color: $primary-color-light;
-        }
-        p {
-            &:first-child {
-                color: $primary-color;
-            }
-            &:last-child {
-                color: $primary-color-dark;
-            }
-            &:first-of-type {
-                color: $primary-color-light;
-            }
-            &:last-of-type {
-                color: $accent-color;
-            }
-            &:nth-child(1) {
-                color: $primary-color;
-            }
-            &:nth-child(even) {
-                color: $primary-color-dark;
-            }
-            &::before {
-                content: "keyboard_arrow_right";
-            }
-            &::before {
-                content: "read more ...";
-            }
-        }
+        margin: auto;
     }
 
 }
@@ -262,3 +234,5 @@ nav.social {
         }
     }
 }
+
+@import "animate";

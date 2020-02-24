@@ -61,6 +61,10 @@ a[href^="http://"] {
   color: #455A64;
 }
 
+a[title~="link"] {
+  color: #000000;
+}
+
 p {
   line-height: 1.75;
   margin-bottom: 1rem;
@@ -194,57 +198,20 @@ header .header nav ul li a:hover {
 
 main {
   width: 80%;
-  min-height: calc( 100vh - 244px);
+  height: 100vh;
   background: #FFFFFF;
   color: #455A64;
   display: block;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+
+main h1 {
+  color: #FFFFFF;
 }
 
 main section {
   padding: 3rem;
-}
-
-main section[class*="content"] {
-  background-color: #CFD8DC;
-}
-
-main section p:first-child {
-  color: #607D8B;
-}
-
-main section p:last-child {
-  color: #455A64;
-}
-
-main section p:first-of-type {
-  color: #CFD8DC;
-}
-
-main section p:last-of-type {
-  color: #d71920;
-}
-
-main section p:nth-child(1) {
-  color: #607D8B;
-}
-
-main section p:nth-child(even) {
-  color: #455A64;
-}
-
-main section p::before {
-  content: "keyboard_arrow_right";
-}
-
-main section p::before {
-  content: "read more ...";
+  margin: auto;
 }
 
 footer {
@@ -338,5 +305,76 @@ nav.social ul li a img {
   background: #FFFFFF;
   padding: 2px;
   border-radius: 50%;
+}
+
+header, footer {
+  display: none;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+section#intro-section {
+  background: #607D8B;
+}
+
+section#next-section {
+  background: #455A64;
+}
+
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  height: 3rem;
+  width: 3rem;
+  margin: auto;
+  border: 4px solid #FFFFFF;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.scroll-down-arrow:hover {
+  color: #d71920;
+  background: #FFFFFF;
+}
+
+.scroll-down-arrow::before {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24pt;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+  content: "arrow_downward";
+}
+
+#next-section .scroll-down-arrow::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 /*# sourceMappingURL=app.css.map */
