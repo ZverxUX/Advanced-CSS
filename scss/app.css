@@ -28,9 +28,17 @@ body {
   color: #212121;
   padding: 0;
   margin: 0;
-  background: url("../images/body-bg.png") repeat;
-  background-attachment: fixed;
-  background-size: content;
+  background: #CFD8DC;
+}
+
+::-moz-selection {
+  background: #d71920;
+  color: #FFFFFF;
+}
+
+::selection {
+  background: #d71920;
+  color: #FFFFFF;
 }
 
 a {
@@ -38,6 +46,18 @@ a {
 }
 
 a:hover {
+  color: #455A64;
+}
+
+a[target="_self"] {
+  color: #607D8B;
+}
+
+a[target="_blank"] {
+  color: #d71920;
+}
+
+a[href^="http://"] {
   color: #455A64;
 }
 
@@ -111,40 +131,6 @@ hr {
   border-right: none;
 }
 
-.table {
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #607D8B;
-  border-collapse: collapse;
-  font-size: 12pt;
-}
-
-.table th, .table td {
-  vertical-align: top;
-  font-weight: normal;
-  text-align: left;
-  padding: .5rem;
-  border-bottom: 1px solid #BDBDBD;
-}
-
-.table thead th {
-  border-bottom: 2px solid #607D8B;
-  color: #d71920;
-}
-
-.table.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #EEEEEE;
-}
-
-.table.table-striped tbody tr:nth-of-type(even) {
-  border-bottom: 1px solid #BDBDBD;
-}
-
-.table tfoot td {
-  text-align: right;
-  font-weight: bold;
-}
-
 header {
   background: rgba(215, 25, 32, 0.98);
   min-height: 4rem;
@@ -206,20 +192,6 @@ header .header nav ul li a:hover {
   text-decoration: none;
 }
 
-header .page-title {
-  background: #455A64;
-  color: #FFFFFF;
-  max-width: 100%;
-  margin: auto;
-}
-
-header .page-title h1 {
-  max-width: 100%;
-  padding: 5rem 3rem 1rem;
-  font-size: 30pt;
-  margin: auto;
-}
-
 main {
   width: 80%;
   min-height: calc( 100vh - 244px);
@@ -235,130 +207,44 @@ main {
           justify-content: space-between;
 }
 
-main aside {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 20%;
-          flex: 0 1 20%;
-  max-width: 20%;
-  margin-top: 3rem;
+main section {
+  padding: 3rem;
 }
 
-main aside nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0rem;
-  margin: 0rem;
-  list-style: none;
+main section[class*="content"] {
+  background-color: #CFD8DC;
 }
 
-main aside nav ul li {
-  list-style: none;
-  margin: 0rem;
-  border-bottom: 1px solid #BDBDBD;
+main section p:first-child {
+  color: #607D8B;
 }
 
-main aside nav ul li a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding: 1rem 1.5rem;
-  color: #d71920;
-  text-decoration: none;
-}
-
-main aside nav ul li a:hover {
+main section p:last-child {
   color: #455A64;
-  text-decoration: none;
 }
 
-main aside nav ul li a i {
-  margin-right: .5rem;
+main section p:first-of-type {
+  color: #CFD8DC;
 }
 
-main aside nav ul li.active a {
+main section p:last-of-type {
+  color: #d71920;
+}
+
+main section p:nth-child(1) {
   color: #607D8B;
 }
 
-main article {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-  background: #FFFFFF;
-  color: #607D8B;
-  padding: 0 3rem;
-  margin: 3rem auto 0;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 80%;
-          flex: 0 1 80%;
-  max-width: 80%;
+main section p:nth-child(even) {
+  color: #455A64;
 }
 
-main article h2 {
-  margin-bottom: 2rem;
-  font-size: 24pt;
+main section p::before {
+  content: "keyboard_arrow_right";
 }
 
-main article figure {
-  max-width: 25%;
-  float: left;
-  padding-right: 1rem;
-  margin-right: 1rem;
-}
-
-main article section {
-  padding: 3rem;
-}
-
-main article section.different {
-  background-color: rgba(150, 150, 150, 0.125);
-  margin-bottom: 3rem;
-}
-
-main.stevan {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-main.stevan section {
-  width: 100%;
-  margin: 3rem 0;
-  padding: 3rem;
-}
-
-main.stevan section.section-title {
-  background: #d71920;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 100%;
-          flex: 0 1 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 5rem 3rem 1rem;
-}
-
-main.stevan section.section-title h1 {
-  color: #FFFFFF;
+main section p::before {
+  content: "read more ...";
 }
 
 footer {

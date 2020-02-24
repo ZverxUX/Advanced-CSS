@@ -16,16 +16,40 @@ body {
     color: $primary-text-color;
     padding: 0;
     margin:0;
-    background: url("../images/body-bg.png") repeat;
-    background-attachment: fixed;
-    background-size: content;
+    background: $primary-color-light;
+}
+::selection {
+    background: $accent-color;
+    color: $white;
 }
 a {
+    color: $accent-color;
+    &:hover {
+            color: $primary-color-dark;
+    }
+    &[target="_self"] {
+        color: $primary-color;
+    }
+    &[target="_blank"] {
         color: $accent-color;
-        &:hover {
-                color: $primary-color-dark;
-        }
+    }
+    &[href^="http://"] {
+        color: $primary-color-dark;
+    }
+    &[href$=".jpg"] {
+
+    }
+    &[href=".pdf"] {
+
+    }
+    &[title~="link"] {
+
+    }
+    &[class|="top"] {
+    
+    }
 }
+
 p {
         line-height: 1.75;
         margin-bottom: 1rem;
@@ -80,41 +104,6 @@ hr {
         border-left: none;
         border-right: none;
 }
-.table {
-    width: $fullwidth;
-    margin-bottom: 1rem;
-    color: $primary-color;
-    border-collapse: collapse;
-    
-    font-size: 12pt;
-    th, td {
-        vertical-align: top;
-        font-weight: normal;
-        text-align: left;
-        padding: .5rem;
-        border-bottom: 1px solid $divider-color;
-    }
-    thead th {
-        border-bottom: 2px solid $primary-color;
-        color: $accent-color;
-    }
-
-    &.table-striped {
-        tbody tr:nth-of-type(odd) {
-            background-color: $grey-200;
-        }
-        tbody tr:nth-of-type(even) {
-            border-bottom: 1px solid $divider-color;
-        }
-    }
-    tfoot {
-        td {
-            text-align: right;
-            font-weight: bold;
-        }
-    }
-}
-
 header {
     background: rgba(215,25,32,.98);
     min-height: 4rem;
@@ -161,18 +150,6 @@ header {
             }
         }
     }
-    .page-title {
-        background: $primary-color-dark;
-        color: $primary-color-text;
-        max-width: 100%;
-        margin: auto;
-        h1 {
-            max-width: $fullwidth;
-            padding: 5rem 3rem 1rem;
-            font-size: 30pt;
-            margin: auto;
-        }
-    }
 }
 
 main {
@@ -185,92 +162,40 @@ main {
     display: flex;
     justify-content: space-between;
     
-    aside {
-        order: 1;
-        display: flex;
-        flex: 0 1 $alignsidebar;
-        max-width: $alignsidebar;
-        margin-top: 3rem;
-        nav {
-            ul {
-                display: flex;
-                flex-direction: column;
-                padding: 0rem;
-                margin: 0rem;
-                list-style: none;
-                li {
-                    list-style: none;
-                    margin: 0rem;
-                    border-bottom: 1px solid $divider-color;
-                    a {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        padding: 1rem 1.5rem;
-                        color: $accent-color;
-                        text-decoration: none;
-                        &:hover {
-                            color: $primary-color-dark;
-                            text-decoration: none;
-                        }
-                        i {
-                            margin-right: .5rem;
-                        }
-                    }
-                    &.active {
-                        a {
-                            color: $primary-color;
-                        }
-                    }
-                }
+    
+    section {
+        padding: 3rem;
+        &[class*="content"] {
+            background-color: $primary-color-light;
+        }
+        p {
+            &:first-child {
+                color: $primary-color;
+            }
+            &:last-child {
+                color: $primary-color-dark;
+            }
+            &:first-of-type {
+                color: $primary-color-light;
+            }
+            &:last-of-type {
+                color: $accent-color;
+            }
+            &:nth-child(1) {
+                color: $primary-color;
+            }
+            &:nth-child(even) {
+                color: $primary-color-dark;
+            }
+            &::before {
+                content: "keyboard_arrow_right";
+            }
+            &::before {
+                content: "read more ...";
             }
         }
     }
-    article {
-        order: 2;
-        background: $primary-color-text;
-        color: $primary-color;
-        padding: 0 3rem;
-        margin: 3rem auto 0;
-        flex: 0 1 $alignwide;
-        max-width: $alignwide;
-        h2 {
-            margin-bottom: 2rem;
-            font-size: 24pt;
-        }
-        figure {
-            max-width: 25%;
-            float: left;
-            padding-right: 1rem;
-            margin-right: 1rem;
-        }
-        section {
-            padding: 3rem;
-            &.different {
-                background-color: rgba(150,150,150,.125);
-                margin-bottom: 3rem;
-            }
-        }
-    }
-    &.stevan {
-        flex-direction: column;
-        justify-content: flex-start;
-        section {
-            width: $fullwidth;
-            margin: 3rem 0;
-            padding: 3rem;
-            &.section-title {
-                background: $accent-color;
-                flex: 0 1 $fullwidth;
-                max-width: $fullwidth;
-                margin: 0;
-                padding: 5rem 3rem 1rem;
-                h1 {
-                    color: $white;
-                }
-            }
-        }
-    }
+
 }
 footer {
     background: $primary-color-dark;
