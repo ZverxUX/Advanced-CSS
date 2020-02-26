@@ -306,4 +306,75 @@ nav.social ul li a img {
   padding: 2px;
   border-radius: 50%;
 }
+
+header, footer {
+  display: none;
+}
+
+main {
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 80px auto;
+}
+
+main section#carousel {
+  -webkit-transform: translateZ(-300px) rotate3d(0, 1, 0, 0deg);
+          transform: translateZ(-300px) rotate3d(0, 1, 0, 0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main section#carousel article.carousel-item {
+  width: 300px;
+  height: 200px;
+  border-radius: 7px;
+  position: absolute;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 64px;
+}
+
+main section#carousel article.carousel-item#item-1 {
+  background-image: url("../assets/icon1.png");
+  background-color: #CFD8DC;
+  color: #d71920;
+  -webkit-transform: rotateY(0deg) translateZ(300px);
+          transform: rotateY(0deg) translateZ(300px);
+}
+
+main section#carousel article.carousel-item#item-2 {
+  background-color: #607D8B;
+  background-image: url("../assets/icon2.png");
+  color: #d71920;
+  -webkit-transform: rotateY(72deg) translateZ(300px);
+          transform: rotateY(72deg) translateZ(300px);
+}
+
+main section#carousel article.carousel-item#item-3 {
+  background-color: #455A64;
+  background-image: url("../assets/icon3.png");
+  color: #d71920;
+  -webkit-transform: rotateY(144deg) translateZ(300px);
+          transform: rotateY(144deg) translateZ(300px);
+}
+
+main section#carousel article.carousel-item#item-4 {
+  background-color: #d71920;
+  background-image: url("../assets/icon4.png");
+  color: #FFFFFF;
+  -webkit-transform: rotateY(216deg) translateZ(300px);
+          transform: rotateY(216deg) translateZ(300px);
+}
+
+main section#carousel article.carousel-item#item-5 {
+  background-color: #CFD8DC;
+  background-image: url("../assets/icon5.png");
+  color: #d71920;
+  -webkit-transform: rotateY(288deg) translateZ(300px);
+          transform: rotateY(288deg) translateZ(300px);
+}
 /*# sourceMappingURL=app.css.map */

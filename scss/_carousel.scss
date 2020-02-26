@@ -1,0 +1,57 @@
+header, footer {
+    display: none;
+}
+main {
+    perspective: 400px;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 80px auto;
+    section {
+        &#carousel {
+            transform: translateZ(-300px) rotate3d(0, 1, 0, 0deg);
+            transform-style: preserve-3d;
+        article.carousel-item {
+                width: 300px;
+                height: 200px;
+                border-radius: 7px;
+                position: absolute;
+                margin: 0 auto;
+
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 64px;
+                &#item-1 {
+                    background-image: url("../assets/icon1.png");
+                    background-color: $primary-color-light;
+                    color: $accent-color;
+                    transform: rotateY(0deg) translateZ(300px);
+                }
+                &#item-2 {
+                    background-color: $primary-color;
+                    background-image: url("../assets/icon2.png");
+                    color: $accent-color;
+                    transform: rotateY(72deg) translateZ(300px);                
+                }
+                &#item-3 {
+                    background-color: $primary-color-dark;
+                    background-image: url("../assets/icon3.png");
+                    color: $accent-color;
+                    transform: rotateY(144deg) translateZ(300px);                
+                }
+                &#item-4 {
+                    background-color: $accent-color;
+                    background-image: url("../assets/icon4.png");
+                    color: $white;
+                    transform: rotateY(216deg) translateZ(300px);                
+                }
+                &#item-5 {
+                    background-color: $primary-color-light;
+                    background-image: url("../assets/icon5.png");
+                    color: $accent-color;
+                    transform: rotateY(288deg) translateZ(300px);                
+                }
+            }
+        }
+    }
+}
