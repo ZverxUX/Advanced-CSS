@@ -1,0 +1,89 @@
+@media only screen and (min-width : $mobile) and (max-width : $tablet) {
+    main {
+        section {
+            max-width: $alignwide;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            h1 {
+                text-align: left;
+            }
+            .gallery-item {
+                flex-basis: 33.33%;
+
+                figure {
+                    display: flex;
+                    flex-direction: column;
+
+                    figcaption {
+                        font-family: $font-base;
+                        color: $primary-text-color;
+                        background: $grey-200;
+                        margin: 0px;
+                        padding: 1rem .25rem;
+                        border-bottom-left-radius: .5rem;
+                        border-bottom-right-radius: .5rem;
+                        font-style: 14pt;
+                        text-align: center;
+                    }
+                }
+            }
+            p {
+                display: block;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width : $tablet) and (max-width : $desktopfullhd) {
+    main {
+        
+        section {
+            max-width: $defaultwidth;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            h1 {
+                text-align: left;
+            }
+            .gallery-item {
+                flex-basis: 20%;
+
+                figure {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 1rem 1rem 3rem;
+                }
+            }
+            p {
+                display: block;
+            }
+        }
+    }
+}
+@media only screen and (min-width : $desktopfullhd) {
+    main {
+        
+        section {
+            max-width: $alignwide;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            h1 {
+                text-align: left;
+            }
+            .gallery-item {
+                flex-basis: 16.66%;
+
+                figure {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 1rem 1rem 3rem;
+                }
+            }
+            p {
+                display: block;
+            }
+        }
+    }
+}

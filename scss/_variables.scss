@@ -1,12 +1,18 @@
-//variables
+//Variables
+// Widths
 
-// Variables Width
-$mediawidth: 750px;
-$defaultwidth: 1200px;
-$alignwide: 80%;
-$alignsidebar: 20%;
+
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1280px;
+$desktopfullhd: 1920px;
+
 $fullwidth: 100%;
-$borderradius: 50%;
+$alignwide: 80%;
+$defaultwidth: 1200px;
+
+$alignsidebar: 20%;
+$borderradius: .5rem;
 
 // Included self hosted Font Family "Mont"
 @font-face {
@@ -15,7 +21,6 @@ $borderradius: 50%;
         font-weight: normal;
         font-style: normal;
     }
-    
     @font-face {
         font-family: 'Mont';
         src: url('../fonts/Mont-Bold.woff2') format('woff2');
